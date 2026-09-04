@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrioGrip — instrumento de power trio no celular</title>
+  <meta name="description" content="Software livre: o celular vira guitarra, baixo ou bateria de um power trio. Blues e rock and roll no mesmo quarto. Sem aula. Sem nuvem de áudio." />
+  <link rel="canonical" href="https://steixeiradecarvalho.github.io/TrioGrip/" />
+  <style>
+    :root {
+      --bg: #0b0a09; --panel: #14110e; --gold: #d4a017; --ink: #f3e6c8;
+      --muted: #9a8b6e; --line: #2c261c;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 18px/1.55 Georgia, "Times New Roman", serif; }
+    nav {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px;
+      padding: 14px 22px; position: sticky; top: 0; background: #0b0a09ee;
+      backdrop-filter: blur(8px); z-index: 5; font-family: system-ui; border-bottom: 1px solid var(--line);
+    }
+    .logo { color: var(--gold); font-weight: 800; letter-spacing: .06em; text-decoration: none; }
+    nav .links a { color: var(--muted); text-decoration: none; font-size: .78rem; margin-left: 14px; }
+    .hero-bleed {
+      min-height: 42vh; display: flex; align-items: flex-end;
+      background:
+        radial-gradient(ellipse at 30% 40%, #3a2a12 0%, transparent 55%),
+        linear-gradient(180deg, #1a1208 0%, #0b0a09 100%);
+      border-bottom: 1px solid var(--line);
+    }
+    .hero { max-width: 820px; margin: 0 auto; padding: 48px 24px 40px; }
+    .mark { font-family: system-ui; letter-spacing: .18em; font-size: .66rem; color: var(--gold); font-weight: 700; }
+    h1 { font-weight: 400; font-size: clamp(2rem, 6.4vw, 3.3rem); line-height: 1.12; margin: 10px 0 16px; }
+    h2 { font-weight: 400; color: var(--gold); font-size: 1.42rem; margin: 0 0 12px; }
+    .lede { font-size: 1.08rem; color: var(--muted); max-width: 38em; }
+    .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 22px; }
+    a.btn {
+      font-family: system-ui; font-weight: 800; text-decoration: none;
+      padding: 13px 20px; border-radius: 12px; display: inline-block; font-size: .92rem;
+    }
+    a.btn.gold { background: var(--gold); color: #1a1204; }
+    a.btn.ghost { border: 1px solid var(--gold); color: var(--gold); }
+    section { max-width: 820px; margin: 0 auto; padding: 32px 24px; }
+    p { margin: 0 0 1em; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+    .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 16px; }
+    .card h3 { margin: 0 0 8px; font-size: 1.02rem; font-weight: 400; color: var(--gold); }
+    .card p { color: var(--muted); font-size: .95rem; margin: 0; }
+    ol.peca { padding-left: 1.2em; color: var(--muted); }
+    ol.peca li { margin-bottom: .55em; }
+    code { font-family: ui-monospace, monospace; font-size: .86em; color: #ffe7a8; }
+    footer {
+      max-width: 820px; margin: 0 auto; padding: 20px 24px 56px;
+      color: #6d624c; font-family: system-ui; font-size: .78rem; border-top: 1px solid var(--line);
+    }
+    footer a { color: var(--gold); }
+  </style>
+</head>
+<body>
+  <nav>
+    <a class="logo" href="#topo">TRIOGRIP</a>
+    <div class="links">
+      <a href="#o-que">O que é</a>
+      <a href="#possibilidades">Possibilidades</a>
+      <a href="#usar">Usar</a>
+      <a href="#codigo">Código</a>
+      <a href="app.html">Tocar</a>
+    </div>
+  </nav>
+  <div class="hero-bleed" id="topo">
+    <header class="hero">
+      <div class="mark">SOFTWARE LIVRE · INSTRUMENTO · NÃO É AULA</div>
+      <h1>Três papéis.<br>Um quarto.<br>O celular que finalmente pesa.</h1>
+      <p class="lede">TrioGrip é um instrumento musical em software. O telefone, deitado nas duas mãos, assume a guitarra, o baixo ou a bateria de um power trio — o formato de Cream, Hendrix Experience, ZZ Top. Blues e rock and roll. O som nasce no aparelho. A rede, se existir, só carrega o pulso.</p>
+      <div class="cta-row">
+        <a class="btn gold" href="app.html">Tocar agora</a>
+        <a class="btn ghost" href="primeira-peca.html">A primeira peça</a>
+        <a class="btn ghost" href="https://github.com/steixeiradecarvalho/TrioGrip">GitHub</a>
+      </div>
+    </header>
+  </div>
+  <section id="o-que">
+    <h2>Do que se trata</h2>
+    <p>Não é um estúdio no bolso, nem um curso com medalha. É um <em>objeto de performance</em>: cinco graus de uma escala (pentatônica menor, blues ou mixolídia), uma área de palhetada, inclinação para bend, e três papéis que se configuram no mesmo código.</p>
+    <p>O design parte do que o celular já é — retângulo fino, dois polegares, giroscópio — e recusa fingir um braço de 22 casas numa tela de quinze centímetros. O vocabulário fica trancado de propósito: quase não existe combinação feia. Sobrou o gesto e o tempo.</p>
+    <div class="grid" style="margin-top:16px">
+      <article class="card">
+        <h3>Guitarra</h3>
+        <p>Graus à esquerda, rasgo à direita. Drive, tom e delay no perfil Cream, Hendrix ou ZZ Top. O riff de duas notas é o contrato do trio.</p>
+      </article>
+      <article class="card">
+        <h3>Baixo</h3>
+        <p>As mesmas teclas, uma oitava abaixo, filtro mais fechado. Tônica e quinta. O chão que deixa a guitarra falar.</p>
+      </article>
+      <article class="card">
+        <h3>Bateria</h3>
+        <p>Kit de três peças mental: bumbo, caixa, chimbal — mais crash e um tom. Backbeat no 2 e no 4. O pé humano reconhece antes da teoria.</p>
+      </article>
+    </div>
+  </section>
+  <section id="possibilidades">
+    <h2>Possibilidades que o instrumento já oferece</h2>
+    <div class="grid">
+      <article class="card">
+        <h3>A primeira peça, no primeiro uso</h3>
+        <p>Oito compassos em Lá. Banda-fantasma (bumbo e caixa). Pads que acendem. Quem nunca tocou sai com uma forma que o ouvido aceita como blues — não como menu.</p>
+      </article>
+      <article class="card">
+        <h3>Loop de dois compassos</h3>
+        <p>O ostinato fica rodando. A guitarra fraseia por cima de si mesma. É o contrato clássico do power trio: o riff trabalha, o solo conversa.</p>
+      </article>
+      <article class="card">
+        <h3>Três aparelhos, um quarto</h3>
+        <p>Cada celular um papel. O mix é o ar. Wi-Fi local só para o pulso comum — não para stream de áudio. Latência de internet não é opinião: o projeto recusa a nuvem como palco.</p>
+      </article>
+      <article class="card">
+        <h3>Três rostos de amp</h3>
+        <p>Cream: crunch úmido em Lá. Hendrix: sala mais aberta, Mi mixolídio. ZZ Top: médio seco, andamento que empurra. O gesto pode ser o mesmo; o personagem muda.</p>
+      </article>
+      <article class="card">
+        <h3>Modo leve</h3>
+        <p>Cadeia de áudio compartilhada, poucas vozes, sem vibração. Pensado para aparelhos antigos (testado em Galaxy A20). O instrumento cabe no telefone que a pessoa já tem.</p>
+      </article>
+      <article class="card">
+        <h3>Código aberto</h3>
+        <p>HTML, CSS e Web Audio num arquivo só. Sem build, sem conta, sem telemetria. Fork, hospede, ensine, toque. Licença MIT.</p>
+      </article>
+    </div>
+  </section>
+  <section>
+    <h2>Como soa a primeira peça</h2>
+    <p>Pads da esquerda para a direita: A · C · D · E · G. Quase só os dois primeiros.</p>
+    <ol class="peca">
+      <li>Compassos 1–2: A no <em>um</em> e no <em>três</em>.</li>
+      <li>3–4: depois de cada A, um C curto — chamado e resposta.</li>
+      <li>5–6: D no um, de volta ao A no três.</li>
+      <li>7–8: E, D, A; silêncio no quatro. Incline o telefone no último A.</li>
+    </ol>
+    <p><a class="btn ghost" href="primeira-peca.html">Texto completo do primeiro encontro</a></p>
+  </section>
+  <section id="usar">
+    <h2>Como usar</h2>
+    <p>No celular, de preferência Chrome, em paisagem, duas mãos. Toque em <em>Ativar som</em>. Para o primeiro ciclo, escolha <em>Primeira peça</em>.</p>
+    <p>Em casa, sirva os arquivos por HTTP na rede local — sensores de inclinação e o contexto de áudio do Android costumam falhar em <code>file://</code>:</p>
+    <p><code>python3 -m http.server 8080</code></p>
+    <p>Abra <code>http://SEU-IP:8080/</code> nos aparelhos do quarto. Volume no speaker; Bluetooth de fone acrescenta atraso.</p>
+  </section>
+  <section id="codigo">
+    <h2>Open source</h2>
+    <p>Repositório público: <a href="https://github.com/steixeiradecarvalho/TrioGrip">github.com/steixeiradecarvalho/TrioGrip</a>. Contribuições que preservem a tocabilidade em hardware modesto e a regra “áudio local, pulso opcional” são bem-vindas. O que o projeto não pretende ser: DAW, escola gamificada, jam na nuvem.</p>
+    <div class="cta-row">
+      <a class="btn gold" href="app.html">Abrir o instrumento</a>
+      <a class="btn ghost" href="https://github.com/steixeiradecarvalho/TrioGrip">Ver o código</a>
+    </div>
+  </section>
+  <footer>
+    TrioGrip · MIT ·
+    <a href="https://github.com/steixeiradecarvalho/TrioGrip">código</a> ·
+    <a href="app.html">app</a> ·
+    página em
+    <a href="https://steixeiradecarvalho.github.io/TrioGrip/">steixeiradecarvalho.github.io/TrioGrip</a>
+  </footer>
+</body>
+</html>
