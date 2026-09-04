@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TrioGrip — A primeira peça</title>
+  <style>
+    :root { --bg: #0c0b0a; --ink: #f3e6c8; --muted: #9a8b6e; --gold: #d4a017; --line: #2a241c; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 20px/1.55 Georgia, "Times New Roman", serif; }
+    header { padding: 48px 24px 24px; max-width: 680px; margin: 0 auto; }
+    .mark { letter-spacing: .18em; font-size: .72rem; color: var(--gold); font-family: system-ui; font-weight: 700; }
+    h1 { font-weight: 400; font-size: clamp(2rem, 6vw, 3.1rem); line-height: 1.15; margin: 12px 0 18px; }
+    .lede { color: var(--muted); font-size: 1.08rem; }
+    main { max-width: 680px; margin: 0 auto; padding: 0 24px 80px; }
+    h2 { font-weight: 400; font-size: 1.45rem; color: var(--gold); margin: 2.4em 0 .6em; }
+    p { margin: 0 0 1.1em; }
+    em { font-style: italic; color: #ffe7a8; }
+    ol.gestos { list-style: none; padding: 0; counter-reset: g; }
+    ol.gestos li { counter-increment: g; position: relative; padding: 18px 0 18px 52px; border-top: 1px solid var(--line); }
+    ol.gestos li::before { content: counter(g, decimal-leading-zero); position: absolute; left: 0; top: 18px; color: var(--gold); font-family: system-ui; font-size: .8rem; letter-spacing: .08em; }
+    .pad { display: inline-block; min-width: 1.6em; text-align: center; border: 1px solid var(--gold); color: var(--gold); border-radius: 6px; padding: 0 .28em; font-family: system-ui; font-size: .78em; font-style: normal; }
+    blockquote { margin: 1.6em 0; padding: 0 0 0 18px; border-left: 2px solid var(--gold); color: var(--muted); font-style: italic; }
+    .opp { border-top: 1px solid var(--line); padding: 14px 0; }
+    .opp strong { color: var(--gold); font-weight: 600; font-family: system-ui; font-size: .78rem; letter-spacing: .06em; }
+    a.cta { display: inline-block; margin-top: 8px; background: var(--gold); color: #1a1204; text-decoration: none; font-family: system-ui; font-weight: 800; padding: 14px 22px; border-radius: 12px; }
+    footer { color: #6d624c; font-size: .85rem; margin-top: 3em; font-family: system-ui; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="mark">TRIOGRIP · PRIMEIRO ENCONTRO</div>
+    <h1>Você não vai aprender um instrumento.<br>Você vai sair daqui com uma peça.</h1>
+    <p class="lede">Oito compassos. Duas notas. Um pulso que já parece banda. Se seguir o que está abaixo, no primeiro uso o ouvido humano reconhece blues — não um aplicativo sendo apertado.</p>
+  </header>
+  <main>
+    <p>O TrioGrip é um celular virado de lado, nas duas mãos, como quem segura um objeto que pesa. O polegar esquerdo escolhe o grau. O direito raspa o tempo. Inclinar o aparelho é a voz: o bend, o queixume, a nota que não quer cair no lugar certo.</p>
+    <p>As cinco teclas não são um piano. São a <em>pentatônica menor</em> — o vocabulário do blues e do rock and roll. Qualquer combinação entre elas é, por desenho, quase impossível de soar “errada”. O instrumento já fez o trabalho teórico. Sobrou o gesto.</p>
+    <h2>Antes do primeiro toque</h2>
+    <p>Abra o TrioGrip, deite o telefone, toque em <em>Ativar som</em> e depois em <em>Primeira peça</em>. O perfil Cream entra sozinho. Uma bateria-fantasma ocupa o quarto. Você não está sozinho.</p>
+    <p>Segure o aparelho na altura do peito. Cotovelos baixos. Respira no tempo do clique.</p>
+    <h2>A peça — “Dois suspiros em Lá”</h2>
+    <p>Pads da esquerda para a direita: <span class="pad">A</span> <span class="pad">C</span> <span class="pad">D</span> <span class="pad">E</span> <span class="pad">G</span>. Quase só os dois primeiros.</p>
+    <ol class="gestos">
+      <li><p>No <em>um</em> e no <em>três</em>, toque <span class="pad">A</span>. Dois compassos. Só a tônica.</p></li>
+      <li><p>Depois de cada A, um <span class="pad">C</span> curto. Chamado e resposta.</p></li>
+      <li><p><span class="pad">D</span> no um, <span class="pad">A</span> no três. A tensão sobe e desce.</p></li>
+      <li><p><span class="pad">E</span> no um, <span class="pad">D</span> no dois, <span class="pad">A</span> no três. No quatro, silêncio.</p></li>
+      <li><p>No último A, incline o telefone. Esse é o bend.</p></li>
+    </ol>
+    <blockquote>Se tocar isso uma vez sem pressa, você já tem uma peça. O silêncio no quatro faz parte da partitura.</blockquote>
+    <p><a class="cta" href="app.html">Abrir o TrioGrip e tocar a primeira peça</a></p>
+    <footer>TrioGrip · primeira peça em Lá menor pentatônico · MIT</footer>
+  </main>
+</body>
+</html>
