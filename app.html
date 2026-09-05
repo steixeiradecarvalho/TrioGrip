@@ -163,6 +163,7 @@ let mode = 'guitar', bpm = 92, metroOn = false, nextBeat = 0, beatN = 0;
 let bend = 0, flip = false, lite = true;
 let loopState = 'off', loopEvents = [], loopStart = 0, loopBars = 2, loopLen = 0;
 let lastStrumAt = 0;
+const held = new Set();
 const voices = [];
 let guideOn = false, backingOn = false, guideTimer = 0;
 
@@ -377,17 +378,39 @@ function renderStrings() {
 }
 
 function bindHold(el, fn) {
-  el.addEventListener('pointerdown', function (e) { e.preventDefault(); el.classList.add('on'); ensureCtx(); fn(e); });
-  function up() { el.classList.remove('on'); }
+  el.addEventListener('pointerdown', function (e) {
+    e.preventDefault();
+    try { el.setPointerCapture(e.pointerId); } catch (err) {}
+    el.classList.add('on');
+    held.add(+el.dataset.midi);
+    ensureCtx();
+    fn(e);
+  });
+  function up(e) {
+    el.classList.remove('on');
+    held.delete(+el.dataset.midi);
+    try { el.releasePointerCapture(e.pointerId); } catch (err) {}
+  }
   el.addEventListener('pointerup', up);
-  el.addEventListener('pointerleave', up);
   el.addEventListener('pointercancel', up);
 }
 
+function strumTargets() {
+  const scale = scaleDegrees();
+  const heldNotes = scale.filter(function (m) { return held.has(m); });
+  if (heldNotes.length) return heldNotes;
+  return scale.slice();
+}
+
 function strikeStrum(vel) {
-  const mids = scaleDegrees();
-  playGuitarNote(mids[0], vel, lite ? 0.55 : 0.7);
-  if (!lite) playGuitarNote(mids[2] || mids[1], vel * 0.65, 0.45);
+  const notes = strumTargets();
+  const life = lite ? 0.5 : 0.72;
+  const nPlay = lite ? Math.min(notes.length, 3) : notes.length;
+  for (let i = 0; i < nPlay; i++) {
+    (function (midi, idx) {
+      setTimeout(function () { playGuitarNote(midi, vel * (1 - idx * 0.08), life); }, idx * 28);
+    })(notes[i], i);
+  }
   const el = document.getElementById('strum');
   el.classList.add('hit');
   setTimeout(function () { el.classList.remove('hit'); }, 90);
